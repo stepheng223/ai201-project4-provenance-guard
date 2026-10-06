@@ -4,6 +4,7 @@ import math
 import os
 import re
 import statistics
+from pathlib import Path
 import urllib.request
 
 LABELS = {
@@ -54,20 +55,39 @@ def stylometry(text):
     return {'name': 'stylometry', 'score': round(score, 6), 'available': True, 'metrics': {'word_count': len(words), 'sentence_length_cv': round(cv, 6), 'type_token_ratio': round(ttr, 6), 'punctuation_types': diversity}}
 
 
-def combine(first, second):
-    index = .65*first['score'] + .35*second['score']
+def reference_match(text):
+    words = re.findall(r"\b[\w']+\b", text.lower())
+    grams = {tuple(words[i:i+4]) for i in range(max(0, len(words)-3))}
+    corpus = json.loads(Path(__file__).with_name('reference_corpus.json').read_text())
+    matches = []
+    best = 0.0
+    for source in corpus:
+        tokens = re.findall(r"\b[\w']+\b", source['text'].lower())
+        reference = {tuple(tokens[i:i+4]) for i in range(max(0, len(tokens)-3))}
+        coverage = len(grams & reference)/len(grams) if grams else 0
+        if coverage:
+            matches.append({'reference_id': source['id'], 'coverage': round(coverage, 6)})
+        best = max(best, coverage)
+    return {'name': 'reference_match', 'score': round(.5+.45*best, 6), 'available': True,
+            'metrics': {'ngram_size': 4, 'unique_ngrams': len(grams), 'matches': matches}}
+
+
+def combine(first, second, third):
+    signals = [first, second, third]
+    weights = [.55, .30, .15]
+    index = sum(weight*signal['score'] for weight, signal in zip(weights, signals))
     reasons = []
     if second['metrics']['word_count'] < 35:
         reasons.append('short_text')
-    if abs(first['score']-second['score']) > .50:
+    if max(s['score'] for s in signals)-min(s['score'] for s in signals) > .50:
         reasons.append('signal_disagreement')
     if not first['available']:
         reasons.append('provider_unavailable')
     if reasons:
         index = max(.31, min(.79, index))
     attribution = 'uncertain' if reasons else ('likely_ai' if index >= .80 else 'likely_human' if index <= .30 else 'uncertain')
-    return {'attribution': attribution, 'ai_score': round(index, 6), 'confidence': round(max(index, 1-index), 6), 'confidence_kind': 'heuristic_strength_not_probability', 'label': LABELS[attribution], 'uncertainty_reasons': reasons, 'signals': [first, second]}
+    return {'attribution': attribution, 'ai_score': round(index, 6), 'confidence': round(max(index, 1-index), 6), 'confidence_kind': 'heuristic_strength_not_probability', 'label': LABELS[attribution], 'uncertainty_reasons': reasons, 'signals': signals, 'signal_weights': weights}
 
 
 def analyze(text):
-    return combine(discourse(text), stylometry(text))
+    return combine(discourse(text), stylometry(text), reference_match(text))

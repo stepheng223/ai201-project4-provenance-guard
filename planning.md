@@ -1,5 +1,7 @@
 # Provenance Guard implementation plan
 
+The baseline plan below predates the required implementation. The later stretch plan records the four bonus features before their implementation; its three-signal weights supersede the original two-signal weights.
+
 ## Architecture
 ```text
 POST /submit --validated text--> lexical/LLM signal --AI score-->
@@ -37,3 +39,20 @@ M3: provide detection/API sections and architecture to Codex; request Flask skel
 M4: provide detection and uncertainty sections; request stylometric metrics and weighted scoring. Check four contrasting fixtures, boundary values, disagreement, and short-text abstention.
 M5: provide exact labels and appeals workflow; request label mapping, transactional appeal storage, and limiter. Test all label variants, ownership, duplicate/missing appeals, audit persistence, and 429 responses.
 No stretch features planned; prioritize required behavior and honest evidence.
+
+## Stretch feature plan (before implementation)
+
+### Ensemble detection
+Add reference matching: four-word sequence overlap against a committed synthetic AI reference passage. Unlike discourse cues or sentence statistics this measures similarity to a known source. Score = 0.5 + 0.45*matched_ngram_fraction; absence of matches is neutral, never human evidence. Blind spots: tiny reference corpus, legitimate quotations and paraphrases. Combine discourse 0.55, stylometry 0.30, reference matching 0.15. Keep thresholds 0.80/0.30; >0.50 spread across available signals forces uncertainty. Return all scores and weights; metadata uses its own three signals. Regenerate evidence because scores change.
+
+### Provenance certificate
+A creator requests verification for a text content ID with at least two distinct, timestamped drafts, the final one matching the submission. Validate ordered timezone-aware timestamps, final text, ownership, and bounded evidence. A human reviewer inspects evidence using GET /verification/<id> and approves or rejects through POST /verification/<id>/review with a configured reviewer Bearer token and review notes. No automatic certificate award. Approval issues a UUID certificate bound to SHA-256 of the exact text and displays "Verified human — draft history reviewed" separately from the unchanged detection label. This demo records a reviewer's attestation, not cryptographic proof of the drafting process. Store requests/decisions durably and audit both; reject duplicate pending/completed requests. Missing reviewer configuration fails closed. Verification does not resolve an attribution appeal.
+
+### Analytics dashboard
+GET /analytics returns metrics derived from current content records, not audit events: attribution counts/ratios, appeal rate, mean confidence, content type counts and verified content count. Empty denominators return zero. GET /dashboard renders a responsive Flask/Jinja view with labeled verdict bars and metric cards. No external hosting or separate frontend service. Count each content item once even when it has multiple audit events.
+
+### Multi-modal support
+POST /submit accepts content_type=structured_metadata and metadata object rather than text. Metadata describes a creative asset: asset_name, media_type (image/audio/video), declared_origin (human/ai/unknown), tools (list), revisions (0–20 ordered timestamped objects with summary), and optional generator. Detect using three separate metadata properties: origin declaration, known generative-tool evidence, and revision-history depth. Scores: AI declaration .95, otherwise .5; AI tool/generator .95, otherwise .5; history 3+ revisions .20, two .35, fewer .5. Weights .45/.35/.20; conflicts >.50 force uncertainty; declaration and tool agreement can yield likely_ai. Unverified declarations alone cannot produce verified human. This analyzes metadata, not pixels/waveforms; return metadata-specific labels and metrics, store the original structured object, and support appeals. Reject malformed fields, excessive sizes, invalid media types and timestamps. Do not flatten metadata into prose for text detection.
+
+### Stretch verification and AI tool plan
+Give Codex this stretch plan and architecture before generation. Request ensemble matching, draft-review storage and endpoints, analytics query/view, and a separate metadata pipeline. Verify known-source overlap, conflict abstention, certificate authorization/final-text/timestamp/duplicate checks and persistence, analytics denominators, metadata validation/scoring/appeals, and default required-feature regression tests. Commit reproducible stretch JSON evidence and a dashboard HTML render; extend README and rubric map with exact workflows and limitations.

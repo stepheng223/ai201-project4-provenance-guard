@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Provenance Guard · Analytics</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#e7eff0;background:#101d27}*{box-sizing:border-box}body{margin:0}main{max-width:1060px;margin:auto;padding:48px 24px}header{display:flex;align-items:start;justify-content:space-between;gap:24px}h1{font-size:clamp(28px,5vw,44px);margin:8px 0}p{color:#b9c9d0;line-height:1.6}.eyebrow{color:#82d9c5;letter-spacing:.13em;font-size:12px;font-weight:700}.button{color:#101d27;background:#82d9c5;padding:12px 18px;border-radius:8px;text-decoration:none;white-space:nowrap}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin:30px 0}.card,.panel{background:#1b2c39;border:1px solid #3a4f5e;border-radius:14px;padding:24px}.card h2{font-size:14px;font-weight:500;color:#b9c9d0;margin:0 0 12px}.value{font-size:32px;font-weight:700}.sub{font-size:13px;margin:8px 0 0}h2{font-size:20px}.row{margin:24px 0}.row-label{display:flex;justify-content:space-between;gap:16px;font-size:15px}meter{display:block;width:100%;height:24px;margin-top:8px;accent-color:#82d9c5}.footer{font-size:13px;margin-top:26px}a{color:#82d9c5}a:focus-visible{outline:3px solid white;outline-offset:4px}@media(max-width:600px){header{flex-direction:column}main{padding:28px 18px}}
+</style>
+</head>
+<body><main>
+<header><div><div class="eyebrow">PROVENANCE GUARD</div><h1>Attribution overview</h1><p>Detection patterns and creator appeals across stored submissions.</p></div><a class="button" href="/dashboard">Refresh metrics</a></header>
+<section class="cards" aria-label="Summary metrics">
+<div class="card"><h2>Total submissions</h2><div class="value">3</div><p class="sub">2 text · 1 metadata</p></div>
+<div class="card"><h2>Appeal rate</h2><div class="value">33.3%</div><p class="sub">1 submissions contested</p></div>
+<div class="card"><h2>Mean confidence strength</h2><div class="value">0.858</div><p class="sub">Heuristic strength, not accuracy</p></div>
+<div class="card"><h2>Verified human credentials</h2><div class="value">1</div><p class="sub">Draft history approved by a reviewer</p></div>
+</section>
+<section class="panel"><h2>Detection patterns</h2>
+
+<div class="row"><div class="row-label"><span>Likely AI-generated</span><span>2 · 66.7%</span></div><meter min="0" max="1" value="0.6666666666666666" aria-label="Likely AI-generated proportion">0.6666666666666666</meter></div>
+
+<div class="row"><div class="row-label"><span>Likely human-written</span><span>1 · 33.3%</span></div><meter min="0" max="1" value="0.3333333333333333" aria-label="Likely human-written proportion">0.3333333333333333</meter></div>
+
+<div class="row"><div class="row-label"><span>Authorship uncertain</span><span>0 · 0.0%</span></div><meter min="0" max="1" value="0.0" aria-label="Authorship uncertain proportion">0.0</meter></div>
+
+
+</section>
+<p class="footer">Each submission is counted once. Appeals and verification events do not inflate totals. Credentials reflect reviewer attestations; style scores do not prove authorship. <a href="/analytics">View metrics as JSON</a></p>
+</main></body></html>

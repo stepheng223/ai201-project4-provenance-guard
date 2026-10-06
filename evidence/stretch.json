@@ -1,0 +1,677 @@
+{
+  "ensemble": {
+    "ai_score": 0.918625,
+    "appeal_filed": false,
+    "attribution": "likely_ai",
+    "certificate": null,
+    "certificate_label": null,
+    "confidence": 0.918625,
+    "confidence_kind": "heuristic_strength_not_probability",
+    "content_id": "c83dc93a-f84b-4df5-b7e2-4f206b631fb3",
+    "content_type": "text",
+    "creator_id": "synthetic-demo",
+    "label": "Likely AI-generated. Multiple writing signals support this assessment, but it is not proof of authorship. The creator can appeal.",
+    "signal_weights": [
+      0.55,
+      0.3,
+      0.15
+    ],
+    "signals": [
+      {
+        "available": true,
+        "metrics": {
+          "conversational_cues": [],
+          "stock_phrases": [
+            "transformative paradigm",
+            "it is important to note",
+            "equally essential",
+            "furthermore",
+            "stakeholders",
+            "responsible deployment",
+            "in conclusion",
+            "in modern society"
+          ]
+        },
+        "name": "lexical_discourse",
+        "score": 0.95
+      },
+      {
+        "available": true,
+        "metrics": {
+          "punctuation_types": 2,
+          "sentence_length_cv": 0.0,
+          "type_token_ratio": 0.458333,
+          "word_count": 48
+        },
+        "name": "stylometry",
+        "score": 0.845417
+      },
+      {
+        "available": true,
+        "metrics": {
+          "matches": [
+            {
+              "coverage": 1.0,
+              "reference_id": "synthetic-uniform-demo"
+            }
+          ],
+          "ngram_size": 4,
+          "unique_ngrams": 40
+        },
+        "name": "reference_match",
+        "score": 0.95
+      }
+    ],
+    "status": "classified",
+    "text": "Furthermore, stakeholders in modern society recognize a transformative paradigm in responsible deployment. Furthermore, it is important to note that stakeholders consider deployment equally essential. In conclusion, stakeholders in modern society consider responsible deployment a transformative paradigm. Furthermore, it is important to note that responsible deployment remains equally essential.",
+    "timestamp": "2026-10-06T04:39:01.984181+00:00",
+    "uncertainty_reasons": []
+  },
+  "structured_metadata": {
+    "ai_score": 0.86,
+    "appeal_filed": false,
+    "attribution": "likely_ai",
+    "certificate": null,
+    "certificate_label": null,
+    "confidence": 0.86,
+    "confidence_kind": "heuristic_strength_not_probability",
+    "content_id": "b16e3f66-e695-4b7f-a253-f07904578b49",
+    "content_type": "structured_metadata",
+    "creator_id": "artist-demo",
+    "label": "Likely AI-generated based on the supplied provenance metadata. This assessment does not inspect the asset itself; the creator can appeal.",
+    "metadata": {
+      "asset_name": "Sunset cover illustration",
+      "declared_origin": "ai",
+      "generator": "DALL-E 3",
+      "media_type": "image",
+      "revisions": [],
+      "tools": [
+        "DALL-E 3"
+      ]
+    },
+    "signal_weights": [
+      0.45,
+      0.35,
+      0.2
+    ],
+    "signals": [
+      {
+        "available": true,
+        "metrics": {
+          "declared_origin": "ai"
+        },
+        "name": "origin_declaration",
+        "score": 0.95
+      },
+      {
+        "available": true,
+        "metrics": {
+          "generator": "DALL-E 3",
+          "known_ai_tools": [
+            "DALL-E 3"
+          ]
+        },
+        "name": "generation_tools",
+        "score": 0.95
+      },
+      {
+        "available": true,
+        "metrics": {
+          "independently_verified": false,
+          "revision_count": 0
+        },
+        "name": "revision_history",
+        "score": 0.5
+      }
+    ],
+    "status": "classified",
+    "timestamp": "2026-10-06T04:39:01.986016+00:00",
+    "uncertainty_reasons": []
+  },
+  "verification_request": {
+    "content_id": "e02c1d68-1b1b-498b-ab24-f81f804e12e5",
+    "creator_id": "writer-demo",
+    "creator_reasoning": "Here are drafts of my account.",
+    "drafts": [
+      {
+        "text": "First draft: the broth was too salty.",
+        "timestamp": "2026-01-01T10:00:00Z"
+      },
+      {
+        "text": "ok so i finally tried that new ramen place downtown and honestly? underwhelming. the broth was fine but they put WAY too much sodium in it and i was thirsty for like three hours after. my friend got the spicy version and said it was better. probably won't go back unless someone drags me there",
+        "timestamp": "2026-01-01T11:00:00Z"
+      }
+    ]
+  },
+  "pending_verification": {
+    "content_id": "e02c1d68-1b1b-498b-ab24-f81f804e12e5",
+    "creator_id": "writer-demo",
+    "creator_reasoning": "Here are drafts of my account.",
+    "drafts": [
+      {
+        "text": "First draft: the broth was too salty.",
+        "timestamp": "2026-01-01T10:00:00Z"
+      },
+      {
+        "text": "ok so i finally tried that new ramen place downtown and honestly? underwhelming. the broth was fine but they put WAY too much sodium in it and i was thirsty for like three hours after. my friend got the spicy version and said it was better. probably won't go back unless someone drags me there",
+        "timestamp": "2026-01-01T11:00:00Z"
+      }
+    ],
+    "status": "pending",
+    "timestamp": "2026-10-06T04:39:01.987977+00:00",
+    "verification_id": "69d13ec2-c27c-4182-b4b2-e16c69d6a05d"
+  },
+  "review_result": {
+    "content": {
+      "ai_score": 0.205863,
+      "appeal_filed": false,
+      "attribution": "likely_human",
+      "certificate": {
+        "certificate_id": "06b6ad68-9cd9-4375-aeb9-b2c4992bf683",
+        "content_id": "e02c1d68-1b1b-498b-ab24-f81f804e12e5",
+        "creator_id": "writer-demo",
+        "issued_at": "2026-10-06T04:39:01.988692+00:00",
+        "text_sha256": "0831a1143d08fdac20fb2478b7d80d01135824c2fbda73bc45313b97c6e7a548",
+        "verification_id": "69d13ec2-c27c-4182-b4b2-e16c69d6a05d",
+        "verification_method": "human_review_of_draft_history"
+      },
+      "certificate_label": "Verified human \u2014 draft history reviewed",
+      "confidence": 0.794137,
+      "confidence_kind": "heuristic_strength_not_probability",
+      "content_id": "e02c1d68-1b1b-498b-ab24-f81f804e12e5",
+      "content_type": "text",
+      "creator_id": "writer-demo",
+      "label": "Likely human-written. Writing signals support human authorship, but this does not verify who wrote it.",
+      "signal_weights": [
+        0.55,
+        0.3,
+        0.15
+      ],
+      "signals": [
+        {
+          "available": true,
+          "metrics": {
+            "conversational_cues": [
+              "ok so",
+              "honestly",
+              "way too",
+              "my friend",
+              "won't",
+              "like three",
+              "i was"
+            ],
+            "stock_phrases": []
+          },
+          "name": "lexical_discourse",
+          "score": 0.05
+        },
+        {
+          "available": true,
+          "metrics": {
+            "punctuation_types": 2,
+            "sentence_length_cv": 0.61119,
+            "type_token_ratio": 0.872727,
+            "word_count": 55
+          },
+          "name": "stylometry",
+          "score": 0.344544
+        },
+        {
+          "available": true,
+          "metrics": {
+            "matches": [],
+            "ngram_size": 4,
+            "unique_ngrams": 52
+          },
+          "name": "reference_match",
+          "score": 0.5
+        }
+      ],
+      "status": "classified",
+      "text": "ok so i finally tried that new ramen place downtown and honestly? underwhelming. the broth was fine but they put WAY too much sodium in it and i was thirsty for like three hours after. my friend got the spicy version and said it was better. probably won't go back unless someone drags me there",
+      "timestamp": "2026-10-06T04:39:01.985286+00:00",
+      "uncertainty_reasons": []
+    },
+    "verification": {
+      "content_id": "e02c1d68-1b1b-498b-ab24-f81f804e12e5",
+      "creator_id": "writer-demo",
+      "creator_reasoning": "Here are drafts of my account.",
+      "drafts": [
+        {
+          "text": "First draft: the broth was too salty.",
+          "timestamp": "2026-01-01T10:00:00Z"
+        },
+        {
+          "text": "ok so i finally tried that new ramen place downtown and honestly? underwhelming. the broth was fine but they put WAY too much sodium in it and i was thirsty for like three hours after. my friend got the spicy version and said it was better. probably won't go back unless someone drags me there",
+          "timestamp": "2026-01-01T11:00:00Z"
+        }
+      ],
+      "review_notes": "Demo reviewer examined drafts and attested human authorship; not independent proof.",
+      "reviewed_at": "2026-10-06T04:39:01.988692+00:00",
+      "status": "approved",
+      "timestamp": "2026-10-06T04:39:01.987977+00:00",
+      "verification_id": "69d13ec2-c27c-4182-b4b2-e16c69d6a05d"
+    }
+  },
+  "analytics": {
+    "appeal_rate": 0.3333333333333333,
+    "appealed_submissions": 1,
+    "attribution_counts": {
+      "likely_ai": 2,
+      "likely_human": 1,
+      "uncertain": 0
+    },
+    "attribution_ratios": {
+      "likely_ai": 0.6666666666666666,
+      "likely_human": 0.3333333333333333,
+      "uncertain": 0.0
+    },
+    "content_type_counts": {
+      "structured_metadata": 1,
+      "text": 2
+    },
+    "mean_confidence": 0.8575873333333334,
+    "total_submissions": 3,
+    "verified_submissions": 1
+  },
+  "audit": {
+    "entries": [
+      {
+        "ai_score": 0.205863,
+        "appeal_filed": false,
+        "attribution": "likely_human",
+        "certificate": {
+          "certificate_id": "06b6ad68-9cd9-4375-aeb9-b2c4992bf683",
+          "content_id": "e02c1d68-1b1b-498b-ab24-f81f804e12e5",
+          "creator_id": "writer-demo",
+          "issued_at": "2026-10-06T04:39:01.988692+00:00",
+          "text_sha256": "0831a1143d08fdac20fb2478b7d80d01135824c2fbda73bc45313b97c6e7a548",
+          "verification_id": "69d13ec2-c27c-4182-b4b2-e16c69d6a05d",
+          "verification_method": "human_review_of_draft_history"
+        },
+        "certificate_label": "Verified human \u2014 draft history reviewed",
+        "confidence": 0.794137,
+        "confidence_kind": "heuristic_strength_not_probability",
+        "content_id": "e02c1d68-1b1b-498b-ab24-f81f804e12e5",
+        "content_type": "text",
+        "creator_id": "writer-demo",
+        "event": "verification_approved",
+        "label": "Likely human-written. Writing signals support human authorship, but this does not verify who wrote it.",
+        "review_notes": "Demo reviewer examined drafts and attested human authorship; not independent proof.",
+        "signal_weights": [
+          0.55,
+          0.3,
+          0.15
+        ],
+        "signals": [
+          {
+            "available": true,
+            "metrics": {
+              "conversational_cues": [
+                "ok so",
+                "honestly",
+                "way too",
+                "my friend",
+                "won't",
+                "like three",
+                "i was"
+              ],
+              "stock_phrases": []
+            },
+            "name": "lexical_discourse",
+            "score": 0.05
+          },
+          {
+            "available": true,
+            "metrics": {
+              "punctuation_types": 2,
+              "sentence_length_cv": 0.61119,
+              "type_token_ratio": 0.872727,
+              "word_count": 55
+            },
+            "name": "stylometry",
+            "score": 0.344544
+          },
+          {
+            "available": true,
+            "metrics": {
+              "matches": [],
+              "ngram_size": 4,
+              "unique_ngrams": 52
+            },
+            "name": "reference_match",
+            "score": 0.5
+          }
+        ],
+        "status": "classified",
+        "text": "ok so i finally tried that new ramen place downtown and honestly? underwhelming. the broth was fine but they put WAY too much sodium in it and i was thirsty for like three hours after. my friend got the spicy version and said it was better. probably won't go back unless someone drags me there",
+        "timestamp": "2026-10-06T04:39:01.988692+00:00",
+        "uncertainty_reasons": [],
+        "verification_id": "69d13ec2-c27c-4182-b4b2-e16c69d6a05d"
+      },
+      {
+        "ai_score": 0.205863,
+        "appeal_filed": false,
+        "attribution": "likely_human",
+        "certificate": null,
+        "certificate_label": null,
+        "confidence": 0.794137,
+        "confidence_kind": "heuristic_strength_not_probability",
+        "content_id": "e02c1d68-1b1b-498b-ab24-f81f804e12e5",
+        "content_type": "text",
+        "creator_id": "writer-demo",
+        "event": "verification_requested",
+        "label": "Likely human-written. Writing signals support human authorship, but this does not verify who wrote it.",
+        "signal_weights": [
+          0.55,
+          0.3,
+          0.15
+        ],
+        "signals": [
+          {
+            "available": true,
+            "metrics": {
+              "conversational_cues": [
+                "ok so",
+                "honestly",
+                "way too",
+                "my friend",
+                "won't",
+                "like three",
+                "i was"
+              ],
+              "stock_phrases": []
+            },
+            "name": "lexical_discourse",
+            "score": 0.05
+          },
+          {
+            "available": true,
+            "metrics": {
+              "punctuation_types": 2,
+              "sentence_length_cv": 0.61119,
+              "type_token_ratio": 0.872727,
+              "word_count": 55
+            },
+            "name": "stylometry",
+            "score": 0.344544
+          },
+          {
+            "available": true,
+            "metrics": {
+              "matches": [],
+              "ngram_size": 4,
+              "unique_ngrams": 52
+            },
+            "name": "reference_match",
+            "score": 0.5
+          }
+        ],
+        "status": "classified",
+        "text": "ok so i finally tried that new ramen place downtown and honestly? underwhelming. the broth was fine but they put WAY too much sodium in it and i was thirsty for like three hours after. my friend got the spicy version and said it was better. probably won't go back unless someone drags me there",
+        "timestamp": "2026-10-06T04:39:01.987977+00:00",
+        "uncertainty_reasons": [],
+        "verification_id": "69d13ec2-c27c-4182-b4b2-e16c69d6a05d"
+      },
+      {
+        "ai_score": 0.86,
+        "appeal_filed": true,
+        "appeal_reasoning": "Please review this asset metadata.",
+        "appeal_timestamp": "2026-10-06T04:39:01.987074+00:00",
+        "attribution": "likely_ai",
+        "certificate": null,
+        "certificate_label": null,
+        "confidence": 0.86,
+        "confidence_kind": "heuristic_strength_not_probability",
+        "content_id": "b16e3f66-e695-4b7f-a253-f07904578b49",
+        "content_type": "structured_metadata",
+        "creator_id": "artist-demo",
+        "event": "appeal",
+        "label": "Likely AI-generated based on the supplied provenance metadata. This assessment does not inspect the asset itself; the creator can appeal.",
+        "metadata": {
+          "asset_name": "Sunset cover illustration",
+          "declared_origin": "ai",
+          "generator": "DALL-E 3",
+          "media_type": "image",
+          "revisions": [],
+          "tools": [
+            "DALL-E 3"
+          ]
+        },
+        "original_timestamp": "2026-10-06T04:39:01.986016+00:00",
+        "signal_weights": [
+          0.45,
+          0.35,
+          0.2
+        ],
+        "signals": [
+          {
+            "available": true,
+            "metrics": {
+              "declared_origin": "ai"
+            },
+            "name": "origin_declaration",
+            "score": 0.95
+          },
+          {
+            "available": true,
+            "metrics": {
+              "generator": "DALL-E 3",
+              "known_ai_tools": [
+                "DALL-E 3"
+              ]
+            },
+            "name": "generation_tools",
+            "score": 0.95
+          },
+          {
+            "available": true,
+            "metrics": {
+              "independently_verified": false,
+              "revision_count": 0
+            },
+            "name": "revision_history",
+            "score": 0.5
+          }
+        ],
+        "status": "under_review",
+        "timestamp": "2026-10-06T04:39:01.987074+00:00",
+        "uncertainty_reasons": []
+      },
+      {
+        "ai_score": 0.86,
+        "appeal_filed": false,
+        "attribution": "likely_ai",
+        "certificate": null,
+        "certificate_label": null,
+        "confidence": 0.86,
+        "confidence_kind": "heuristic_strength_not_probability",
+        "content_id": "b16e3f66-e695-4b7f-a253-f07904578b49",
+        "content_type": "structured_metadata",
+        "creator_id": "artist-demo",
+        "event": "classification",
+        "label": "Likely AI-generated based on the supplied provenance metadata. This assessment does not inspect the asset itself; the creator can appeal.",
+        "metadata": {
+          "asset_name": "Sunset cover illustration",
+          "declared_origin": "ai",
+          "generator": "DALL-E 3",
+          "media_type": "image",
+          "revisions": [],
+          "tools": [
+            "DALL-E 3"
+          ]
+        },
+        "signal_weights": [
+          0.45,
+          0.35,
+          0.2
+        ],
+        "signals": [
+          {
+            "available": true,
+            "metrics": {
+              "declared_origin": "ai"
+            },
+            "name": "origin_declaration",
+            "score": 0.95
+          },
+          {
+            "available": true,
+            "metrics": {
+              "generator": "DALL-E 3",
+              "known_ai_tools": [
+                "DALL-E 3"
+              ]
+            },
+            "name": "generation_tools",
+            "score": 0.95
+          },
+          {
+            "available": true,
+            "metrics": {
+              "independently_verified": false,
+              "revision_count": 0
+            },
+            "name": "revision_history",
+            "score": 0.5
+          }
+        ],
+        "status": "classified",
+        "timestamp": "2026-10-06T04:39:01.986016+00:00",
+        "uncertainty_reasons": []
+      },
+      {
+        "ai_score": 0.205863,
+        "appeal_filed": false,
+        "attribution": "likely_human",
+        "certificate": null,
+        "certificate_label": null,
+        "confidence": 0.794137,
+        "confidence_kind": "heuristic_strength_not_probability",
+        "content_id": "e02c1d68-1b1b-498b-ab24-f81f804e12e5",
+        "content_type": "text",
+        "creator_id": "writer-demo",
+        "event": "classification",
+        "label": "Likely human-written. Writing signals support human authorship, but this does not verify who wrote it.",
+        "signal_weights": [
+          0.55,
+          0.3,
+          0.15
+        ],
+        "signals": [
+          {
+            "available": true,
+            "metrics": {
+              "conversational_cues": [
+                "ok so",
+                "honestly",
+                "way too",
+                "my friend",
+                "won't",
+                "like three",
+                "i was"
+              ],
+              "stock_phrases": []
+            },
+            "name": "lexical_discourse",
+            "score": 0.05
+          },
+          {
+            "available": true,
+            "metrics": {
+              "punctuation_types": 2,
+              "sentence_length_cv": 0.61119,
+              "type_token_ratio": 0.872727,
+              "word_count": 55
+            },
+            "name": "stylometry",
+            "score": 0.344544
+          },
+          {
+            "available": true,
+            "metrics": {
+              "matches": [],
+              "ngram_size": 4,
+              "unique_ngrams": 52
+            },
+            "name": "reference_match",
+            "score": 0.5
+          }
+        ],
+        "status": "classified",
+        "text": "ok so i finally tried that new ramen place downtown and honestly? underwhelming. the broth was fine but they put WAY too much sodium in it and i was thirsty for like three hours after. my friend got the spicy version and said it was better. probably won't go back unless someone drags me there",
+        "timestamp": "2026-10-06T04:39:01.985286+00:00",
+        "uncertainty_reasons": []
+      },
+      {
+        "ai_score": 0.918625,
+        "appeal_filed": false,
+        "attribution": "likely_ai",
+        "certificate": null,
+        "certificate_label": null,
+        "confidence": 0.918625,
+        "confidence_kind": "heuristic_strength_not_probability",
+        "content_id": "c83dc93a-f84b-4df5-b7e2-4f206b631fb3",
+        "content_type": "text",
+        "creator_id": "synthetic-demo",
+        "event": "classification",
+        "label": "Likely AI-generated. Multiple writing signals support this assessment, but it is not proof of authorship. The creator can appeal.",
+        "signal_weights": [
+          0.55,
+          0.3,
+          0.15
+        ],
+        "signals": [
+          {
+            "available": true,
+            "metrics": {
+              "conversational_cues": [],
+              "stock_phrases": [
+                "transformative paradigm",
+                "it is important to note",
+                "equally essential",
+                "furthermore",
+                "stakeholders",
+                "responsible deployment",
+                "in conclusion",
+                "in modern society"
+              ]
+            },
+            "name": "lexical_discourse",
+            "score": 0.95
+          },
+          {
+            "available": true,
+            "metrics": {
+              "punctuation_types": 2,
+              "sentence_length_cv": 0.0,
+              "type_token_ratio": 0.458333,
+              "word_count": 48
+            },
+            "name": "stylometry",
+            "score": 0.845417
+          },
+          {
+            "available": true,
+            "metrics": {
+              "matches": [
+                {
+                  "coverage": 1.0,
+                  "reference_id": "synthetic-uniform-demo"
+                }
+              ],
+              "ngram_size": 4,
+              "unique_ngrams": 40
+            },
+            "name": "reference_match",
+            "score": 0.95
+          }
+        ],
+        "status": "classified",
+        "text": "Furthermore, stakeholders in modern society recognize a transformative paradigm in responsible deployment. Furthermore, it is important to note that stakeholders consider deployment equally essential. In conclusion, stakeholders in modern society consider responsible deployment a transformative paradigm. Furthermore, it is important to note that responsible deployment remains equally essential.",
+        "timestamp": "2026-10-06T04:39:01.984181+00:00",
+        "uncertainty_reasons": []
+      }
+    ]
+  }
+}

@@ -73,11 +73,11 @@ class GuardTests(unittest.TestCase):
 
     def test_thresholds_disagreement_and_failure(self):
         second = {'score': .8, 'metrics': {'word_count': 40}}
-        self.assertEqual(combine({'score': .8, 'available': True}, second)['attribution'], 'likely_ai')
+        self.assertEqual(combine({'score': .8, 'available': True}, second, {'score': .8})['attribution'], 'likely_ai')
         second['score'] = .3
-        self.assertEqual(combine({'score': .3, 'available': True}, second)['attribution'], 'likely_human')
+        self.assertEqual(combine({'score': .3, 'available': True}, second, {'score': .3})['attribution'], 'likely_human')
         second['score'] = .1
-        self.assertEqual(combine({'score': .95, 'available': True}, second)['attribution'], 'uncertain')
+        self.assertEqual(combine({'score': .95, 'available': True}, second, {'score': .5})['attribution'], 'uncertain')
         with patch.dict(os.environ, {'DETECTION_MODE': 'groq', 'GROQ_API_KEY': '', 'GROQ_MODEL': ''}):
             result = analyze(FIXTURES['ai_style'])
         self.assertIn('provider_unavailable', result['uncertainty_reasons'])

@@ -1,13 +1,21 @@
 {
   "uniform_synthetic": {
-    "ai_score": 0.913396,
+    "ai_score": 0.918625,
     "appeal_filed": false,
     "attribution": "likely_ai",
-    "confidence": 0.913396,
+    "certificate": null,
+    "certificate_label": null,
+    "confidence": 0.918625,
     "confidence_kind": "heuristic_strength_not_probability",
-    "content_id": "e1ad671f-a769-4ebd-88e2-71d936048fc4",
+    "content_id": "9dd8a9ec-d397-4996-9f05-6ab1766cdfa6",
+    "content_type": "text",
     "creator_id": "demo",
     "label": "Likely AI-generated. Multiple writing signals support this assessment, but it is not proof of authorship. The creator can appeal.",
+    "signal_weights": [
+      0.55,
+      0.3,
+      0.15
+    ],
     "signals": [
       {
         "available": true,
@@ -37,22 +45,45 @@
         },
         "name": "stylometry",
         "score": 0.845417
+      },
+      {
+        "available": true,
+        "metrics": {
+          "matches": [
+            {
+              "coverage": 1.0,
+              "reference_id": "synthetic-uniform-demo"
+            }
+          ],
+          "ngram_size": 4,
+          "unique_ngrams": 40
+        },
+        "name": "reference_match",
+        "score": 0.95
       }
     ],
     "status": "classified",
     "text": "Furthermore, stakeholders in modern society recognize a transformative paradigm in responsible deployment. Furthermore, it is important to note that stakeholders consider deployment equally essential. In conclusion, stakeholders in modern society consider responsible deployment a transformative paradigm. Furthermore, it is important to note that responsible deployment remains equally essential.",
-    "timestamp": "2026-10-06T03:59:22.313410+00:00",
+    "timestamp": "2026-10-06T04:39:01.788032+00:00",
     "uncertainty_reasons": []
   },
   "ai_style": {
-    "ai_score": 0.789886,
+    "ai_score": 0.750322,
     "appeal_filed": false,
     "attribution": "uncertain",
-    "confidence": 0.789886,
+    "certificate": null,
+    "certificate_label": null,
+    "confidence": 0.750322,
     "confidence_kind": "heuristic_strength_not_probability",
-    "content_id": "65083c35-323e-4600-996f-746feabcf3b0",
+    "content_id": "9f483ccc-13e2-4fba-9cab-635404fb45d0",
+    "content_type": "text",
     "creator_id": "demo",
     "label": "Authorship uncertain. The available writing signals are inconclusive; no reliable human or AI attribution can be made.",
+    "signal_weights": [
+      0.55,
+      0.3,
+      0.15
+    ],
     "signals": [
       {
         "available": true,
@@ -81,22 +112,45 @@
         },
         "name": "stylometry",
         "score": 0.492531
+      },
+      {
+        "available": true,
+        "metrics": {
+          "matches": [
+            {
+              "coverage": 0.075,
+              "reference_id": "synthetic-uniform-demo"
+            }
+          ],
+          "ngram_size": 4,
+          "unique_ngrams": 40
+        },
+        "name": "reference_match",
+        "score": 0.53375
       }
     ],
     "status": "classified",
     "text": "Artificial intelligence represents a transformative paradigm shift in modern society. It is important to note that while the benefits of AI are numerous, it is equally essential to consider the ethical implications. Furthermore, stakeholders across various sectors must collaborate to ensure responsible deployment.",
-    "timestamp": "2026-10-06T03:59:22.314413+00:00",
+    "timestamp": "2026-10-06T04:39:01.789324+00:00",
     "uncertainty_reasons": []
   },
   "human_style": {
-    "ai_score": 0.15309,
+    "ai_score": 0.205863,
     "appeal_filed": false,
     "attribution": "likely_human",
-    "confidence": 0.84691,
+    "certificate": null,
+    "certificate_label": null,
+    "confidence": 0.794137,
     "confidence_kind": "heuristic_strength_not_probability",
-    "content_id": "d3d5a160-9cd5-43fe-85a8-da4ca6ed6b5e",
+    "content_id": "c7a52687-fd12-4aad-a8e4-0d605f7475fb",
+    "content_type": "text",
     "creator_id": "demo",
     "label": "Likely human-written. Writing signals support human authorship, but this does not verify who wrote it.",
+    "signal_weights": [
+      0.55,
+      0.3,
+      0.15
+    ],
     "signals": [
       {
         "available": true,
@@ -125,22 +179,40 @@
         },
         "name": "stylometry",
         "score": 0.344544
+      },
+      {
+        "available": true,
+        "metrics": {
+          "matches": [],
+          "ngram_size": 4,
+          "unique_ngrams": 52
+        },
+        "name": "reference_match",
+        "score": 0.5
       }
     ],
     "status": "classified",
     "text": "ok so i finally tried that new ramen place downtown and honestly? underwhelming. the broth was fine but they put WAY too much sodium in it and i was thirsty for like three hours after. my friend got the spicy version and said it was better. probably won't go back unless someone drags me there",
-    "timestamp": "2026-10-06T03:59:22.315336+00:00",
+    "timestamp": "2026-10-06T04:39:01.790393+00:00",
     "uncertainty_reasons": []
   },
   "formal_human_borderline": {
-    "ai_score": 0.534512,
+    "ai_score": 0.529582,
     "appeal_filed": false,
     "attribution": "uncertain",
-    "confidence": 0.534512,
+    "certificate": null,
+    "certificate_label": null,
+    "confidence": 0.529582,
     "confidence_kind": "heuristic_strength_not_probability",
-    "content_id": "c76bda54-8958-4935-af3c-3870818fb76b",
+    "content_id": "2e12c7d3-fb09-4042-9ba6-db225edd4d05",
+    "content_type": "text",
     "creator_id": "demo",
     "label": "Authorship uncertain. The available writing signals are inconclusive; no reliable human or AI attribution can be made.",
+    "signal_weights": [
+      0.55,
+      0.3,
+      0.15
+    ],
     "signals": [
       {
         "available": true,
@@ -161,22 +233,40 @@
         },
         "name": "stylometry",
         "score": 0.598605
+      },
+      {
+        "available": true,
+        "metrics": {
+          "matches": [],
+          "ngram_size": 4,
+          "unique_ngrams": 40
+        },
+        "name": "reference_match",
+        "score": 0.5
       }
     ],
     "status": "classified",
     "text": "The relationship between monetary policy and asset price inflation has been extensively studied in the literature. Central banks face a fundamental tension between their mandate for price stability and the unintended consequences of prolonged low interest rates on equity and real estate valuations.",
-    "timestamp": "2026-10-06T03:59:22.316046+00:00",
+    "timestamp": "2026-10-06T04:39:01.791415+00:00",
     "uncertainty_reasons": []
   },
   "edited_ai_borderline": {
-    "ai_score": 0.42356,
+    "ai_score": 0.435194,
     "appeal_filed": false,
     "attribution": "uncertain",
-    "confidence": 0.57644,
+    "certificate": null,
+    "certificate_label": null,
+    "confidence": 0.564806,
     "confidence_kind": "heuristic_strength_not_probability",
-    "content_id": "aac2e1c4-407b-44a3-9e1f-10ac5c2eb0d5",
+    "content_id": "bc9c43ab-31b0-4825-afaf-f4d28a19ff68",
+    "content_type": "text",
     "creator_id": "demo",
     "label": "Authorship uncertain. The available writing signals are inconclusive; no reliable human or AI attribution can be made.",
+    "signal_weights": [
+      0.55,
+      0.3,
+      0.15
+    ],
     "signals": [
       {
         "available": true,
@@ -199,11 +289,21 @@
         },
         "name": "stylometry",
         "score": 0.467313
+      },
+      {
+        "available": true,
+        "metrics": {
+          "matches": [],
+          "ngram_size": 4,
+          "unique_ngrams": 36
+        },
+        "name": "reference_match",
+        "score": 0.5
       }
     ],
     "status": "classified",
     "text": "I've been thinking a lot about remote work lately. There are genuine tradeoffs \u2014 flexibility and no commute on one side, isolation and blurred work-life boundaries on the other. Studies show productivity varies widely by individual and role type.",
-    "timestamp": "2026-10-06T03:59:22.316799+00:00",
+    "timestamp": "2026-10-06T04:39:01.792345+00:00",
     "uncertainty_reasons": []
   }
 }

@@ -1,12 +1,13 @@
-# Two-minute portfolio walkthrough
+# Portfolio walkthrough with all four stretch features
 
-This is a recording guide, not a recorded video.
+This is a recording guide, not a recorded video. Run `python app.py`; use only demo submissions. Configure a private REVIEWER_TOKEN to demonstrate a reviewer approval.
 
-1. (0:00–0:20) Show planning.md's diagram. Explain that this is a local backend prototype that combines discourse and structural signals, preserves uncertainty, and lets creators appeal.
-2. (0:20–0:45) Run `python app.py`. In another terminal submit text using the README curl example. Show the UUID, per-signal scores, exact label, and status. Explain that the strength index is not a proven authorship probability.
-3. (0:45–1:10) Open evidence/examples.json. Compare the uniform synthetic paragraph (0.913396), casual account (0.153090), and formal passage (0.534512). Point out that the supplied AI-style paragraph stays uncertain instead of weakening the threshold.
-4. (1:10–1:35) Copy the fresh content UUID into the README appeal request. Submit creator reasoning. Show `under_review`, then GET /log and point out separate original classification and appeal events.
-5. (1:35–1:50) Run `python -m unittest -v`; show seven passing checks and evidence/rate-limit.txt's final two 429 responses.
-6. (1:50–2:10) Explain limitations: formal human prose and repetitive poetry can confuse style detectors; creator IDs are not authentication; a real deployment needs calibration and access control. State that Groq is optional and live calls were not verified in this build.
+1. (0:00–0:25) Show planning.md's baseline diagram and stretch plan. Explain that this backend combines three text signals: discourse cues, sentence/vocabulary structure, and reference-source overlap. The weights are 55%, 30%, 15%; disagreement produces uncertainty.
+2. (0:25–0:50) Submit text using the README curl example. Show content ID, all signal scores, weights, exact label and confidence kind. Compare evidence/examples.json's high AI index (0.918625) and formal uncertain example (0.529582). These are heuristic strengths, not calibrated probabilities.
+3. (0:50–1:15) Submit an image's structured metadata using the README request. Show the separate three metadata signals, metadata-specific label and 0.86 AI index. Explain that the asset metadata is analyzed directly; the pipeline does not inspect image pixels.
+4. (1:15–1:40) Submit an appeal for one content ID, show status under_review, and GET /log. Identify the original classification and separate appeal event with creator reasoning.
+5. (1:40–2:15) Submit two distinct timestamped drafts ending in the exact submitted text to /verification. Show the pending record. As the reviewer, inspect the drafts using the private Bearer token; approve with notes only after reviewing. Open /content/<id>/view to show "Verified human — draft history reviewed" separately from the unchanged detector label. Explain that the certificate records a reviewer attestation, not proof that submitted drafts were genuine. For an evidence-only tour, use evidence/stretch.json and evidence/verified-content.html, identifying them as synthetic test artifacts.
+6. (2:15–2:35) Open /dashboard. Show detection proportions, appeal rate, mean confidence, content-type counts and verified submissions. Appeals/reviews do not increase submission totals.
+7. (2:35–2:55) Run `python -m unittest -v` (14 checks). Show rate-limit.txt's final 429 responses. Explain the tiny reference corpus and self-reported metadata limitations, and that live Groq calls have not been verified.
 
-Record your screen and your own explanation using your preferred recording tool, then attach the resulting video in the Course Portal alongside your GitHub URL. If you personalize the implementation, regenerate evidence before recording.
+Record your screen and your own explanation, then attach the video and GitHub URL in the Course Portal. To refresh synthetic evidence, run `python test_app.py --evidence` and `python test_stretch.py --evidence`. Evidence uses temporary databases and does not populate the live app; create demonstration submissions in the running app to see live dashboard metrics.

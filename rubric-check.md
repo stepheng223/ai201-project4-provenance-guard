@@ -8,8 +8,8 @@ Reviewed against the supplied 25-point rubric. This maps evidence to criteria; i
 | Attribution and confidence in response | 1 | Every example response contains `attribution` and `confidence` |
 | Label text in response | 1 | Every example response contains full `label` |
 | Two signals, properties and blind spots | 1 | README: Detection signals and their limits |
-| Both signals visible in results | 1 | Each example's `signals` array contains discourse and stylometry scores/metrics |
-| High and lower confidence submissions | 1 | Synthetic: 0.913396; formal passage: 0.534512 |
+| Both signals visible in results | 1 | Each example's `signals` array contains discourse, stylometry and reference-match scores/metrics |
+| High and lower confidence submissions | 1 | Synthetic: 0.918625; formal passage: 0.529582 |
 | Combination and meaningful-score validation explained | 1 | README: Confidence scoring and validation; five contrasting fixtures and thresholds |
 | Exact label text written out | 1 | README: Exact transparency labels table |
 | Labels in plain language | 1 | All three labels describe authorship and uncertainty in reader-facing language |
@@ -32,7 +32,16 @@ Reviewed against the supplied 25-point rubric. This maps evidence to criteria; i
 
 ## Stretch scope
 
-No bonus features are claimed (0/4 bonus implemented). The offline/Groq alternatives are one interchangeable discourse signal, not a three-signal ensemble. GET /log is an audit view, not an analytics dashboard. The human label is not a verified-human certificate. The API accepts text only.
+All four stretch features are implemented; grading remains the instructor's decision.
+
+| Stretch criterion | Points available | Evidence |
+| --- | ---: | --- |
+| 3+ distinct signals, weights and conflict rules | +1 | README ensemble section; detection.py reference_match and combine; evidence/stretch.json ensemble scores/weights |
+| Verification step and distinct verified label on content | +1 | Draft request plus authorized reviewer approval in app.py; README certificate design; evidence/stretch.json review_result; evidence/verified-content.html badge |
+| Dashboard with detection pattern, appeal rate and another metric | +1 | GET /dashboard and /analytics; templates/dashboard.html; evidence/dashboard.html shows verdict ratios, appeal rate and mean confidence |
+| Second content type with documented pipeline/signals | +1 | metadata_detection.py; structured_metadata submission in evidence/stretch.json; README schema, signals and asset-specific labels |
+
+The original required-feature evidence has been regenerated after changing ensemble weights. planning.md retains the baseline plan and appends a stretch plan written before the bonus implementation. Tests cover all four workflows and the original requirements (14 passing tests).
 
 ## Remaining submission work
 

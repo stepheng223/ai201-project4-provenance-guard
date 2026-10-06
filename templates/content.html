@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Provenance Guard · Content</title>
+<style>body{font-family:system-ui,sans-serif;background:#101d27;color:#e7eff0;margin:0}main{max-width:800px;margin:auto;padding:36px 24px}a{color:#82d9c5}.badge{display:inline-block;background:#82d9c5;color:#102a24;padding:12px;border-radius:8px;font-weight:700}.label{padding:18px;border:1px solid #526c7d;border-radius:8px;line-height:1.6}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.7}.note{color:#b9c9d0;font-size:14px}</style></head><body><main>
+<a href="/dashboard">Analytics dashboard</a><h1>Creator submission</h1><p>Creator: {{ content.creator_id }} · Status: {{ content.status }}</p>
+{% if content.certificate_label %}<p class="badge">{{ content.certificate_label }}</p><p class="note">A reviewer approved this submission's draft history. This credential is separate from automated attribution and records a reviewer attestation.</p>{% endif %}
+<p class="label">{{ content.label }}</p>
+{% if content.text is defined %}<pre>{{ content.text }}</pre>{% else %}<h2>Asset metadata</h2><pre>{{ content.metadata|tojson(indent=2) }}</pre>{% endif %}
+{% if content.certificate %}<h2>Provenance certificate</h2><pre>{{ content.certificate|tojson(indent=2) }}</pre>{% endif %}
+</main></body></html>
